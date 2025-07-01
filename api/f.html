@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/x8gYy0Q/FAB-1.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.5/babel.min.js"></script>
+    <title>FAB Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(140deg, #10121B 0%, #060606 100%);
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .feedback-card {
+            display: none;
+            background: #dff0d8;
+            color: #3c763d;
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .feedback-card.show {
+            display: block;
+        }
+        .feedback-card p {
+            margin: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], textarea {
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(85deg, #ff2a86, #ff9900);
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: linear-gradient(85deg, #ff1d6b, #ff7d00);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="fax" class="container"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [name, setName] = useState('');
+            const [email, setEmail] = useState('');
+            const [issue, setIssue] = useState('');
+            const [feedbackRating, setFeedbackRating] = useState('');
+            const [responseMessage, setResponseMessage] = useState('');
+            const [showCard, setShowCard] = useState(false);
+
+            const handleSubmit = async (event) => {
+                event.preventDefault();
+                setResponseMessage('Submitting...');
+                setShowCard(true);
+                try {
+                    const response = await fetch('/submit_feedback', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name,
+                            email,
+                            issue,
+                            feedback_rating: feedbackRating
+                        })
+                    });
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    setResponseMessage(data.message || 'Feedback submitted successfully!');
+                } catch (error) {
+                    console.error('Error:', error);
+                    setResponseMessage('An error occurred while submitting feedback.');
+                }
+                setName('');
+                setEmail('');
+                setIssue('');
+                setFeedbackRating('');
+            };
+
+            return (
+                <div>
+                    <h2>Help & Support Request</h2>
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="name">Name:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            value={name}
+                            placeholder="FULL NAME"
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
+
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            value={email}
+                            placeholder="example@gmail.com"
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+
+                        <label htmlFor="issue">Issue:</label>
+                        <textarea
+                            id="issue"
+                            value={issue}
+                            placeholder="Drop your Text..."
+                            onChange={(e) => setIssue(e.target.value)}
+                            required
+                        ></textarea>
+
+                        <label>Feedback Rating:</label>
+                        <div>
+                            <input
+                                type="radio"
+                                id="rating1"
+                                name="rating"
+                                value="1"
+                                checked={feedbackRating === '1'}
+                                onChange={(e) => setFeedbackRating(e.target.value)}
+                            />
+                            <label htmlFor="rating1">⭐</label><br/>
+
+                            <input
+                                type="radio"
+                                id="rating2"
+                                name="rating"
+                                value="2"
+                                checked={feedbackRating === '2'}
+                                onChange={(e) => setFeedbackRating(e.target.value)}
+                            />
+                            <label htmlFor="rating2">⭐⭐</label><br/>
+
+                            <input
+                                type="radio"
+                                id="rating3"
+                                name="rating"
+                                value="3"
+                                checked={feedbackRating === '3'}
+                                onChange={(e) => setFeedbackRating(e.target.value)}
+                            />
+                            <label htmlFor="rating3">⭐⭐⭐</label><br/>
+
+                            <input
+                                type="radio"
+                                id="rating4"
+                                name="rating"
+                                value="4"
+                                checked={feedbackRating === '4'}
+                                onChange={(e) => setFeedbackRating(e.target.value)}
+                            />
+                            <label htmlFor="rating4">⭐⭐⭐⭐</label><br/>
+
+                            <input
+                                type="radio"
+                                id="rating5"
+                                name="rating"
+                                value="5"
+                                checked={feedbackRating === '5'}
+                                onChange={(e) => setFeedbackRating(e.target.value)}
+                            />
+                            <label htmlFor="rating5">⭐⭐⭐⭐⭐</label>
+                        </div>
+
+                        <button type="submit">Submit</button>
+                    </form>
+
+                    <div className={`feedback-card ${showCard ? 'show' : ''}`}>
+                        <p>{responseMessage}</p>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('fax'));
+    </script>
+</body>
+<style>.c{display:none;position:fixed;bottom:0;left:0;right:0;background:#ff5555;color:#fff;align-items:center;justify-content:center}.spinner{width:20px;height:20px;border:2px solid transparent;border-top:2px solid #fff;border-radius:50%;animation:spin 1s linear infinite;margin-right:10px}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style></head>
+  <body><div class="c" id="no-internet-card"><div class="spinner"></div><h4>Failed to load data, retrying....</h4></div><script>function updateOnlineStatus(){document.getElementById('no-internet-card').style.display=navigator.onLine?'none':'flex'}window.addEventListener('online',updateOnlineStatus);window.addEventListener('offline',updateOnlineStatus);updateOnlineStatus();</script></body>  
+</html>

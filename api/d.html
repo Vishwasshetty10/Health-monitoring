@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/DGGw2MD/image.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.5/babel.min.js"></script>
+    <title>FAX Dashboard</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-color: #000000;
+        padding: 0;
+        font-size: 15px;
+      }
+
+      .welcome-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .logo {
+        position: absolute;
+        top: 0px;
+        padding: 5px;
+        left: 20px;
+      }
+      img {
+        width: 55px;
+        margin-top: 5px;
+      }
+
+      .top-right-buttons {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+      }
+
+      .button {
+        margin-left: 15px;
+        padding: 8px 12px;
+        font-size: 16px;
+        color: #ffffff;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .l,
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .top-right-buttons {
+          display: none;
+        }
+        .card {
+          width: calc(100% - 20px);
+        }
+
+        .card-container {
+          padding: 30px;
+          margin-top: 10px;
+        }
+        .logo {
+          position: absolute;
+          top: 5%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 30px;
+          padding: 5px;
+        }
+
+        .menu-icon {
+          position: absolute;
+          top: 16px;
+          left: 10px;
+          color: #fff;
+          cursor: pointer;
+        }
+
+        .slide-menu {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0;
+          background-color: #000000;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+          color: #ffffff;
+        }
+
+        .slide-menu a {
+          padding: 15px 25px;
+          text-decoration: none;
+          font-size: 20px;
+          display: block;
+          transition: 0.3s;
+        }
+
+        .close-menu {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+
+      @media only screen and (min-width: 601px) {
+        .menu-icon {
+          display: none;
+        }
+
+        .slide-menu {
+          display: none;
+        }
+
+        .close-menu {
+          display: none;
+        }
+      }
+
+      .icon-md {
+        color: #fff;
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      .card:hover {
+        border: 1px solid #ffffff;
+      }
+
+      .card {
+        width: 100px;
+        padding: 10px;
+        border: 1px solid #2e2e2e;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 10px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        background: linear-gradient(140deg, #10121B 0%, #060606 100%);
+        color: #000000;
+      }
+
+      .l,
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      .dropdown {
+        position: relative;
+        margin-top: 8px;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        background-color: #000000;
+        left: 5px;
+        border-radius: 10px;
+        margin-top: 10px;
+        text-align: center;
+        border: 2px solid white;
+        min-width: 100px;
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: rgb(255, 255, 255);
+        padding: 5px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #000000;
+        border-radius: 10px;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: #fff;
+        padding: 50px;
+        margin: 30px;
+        border-radius: 20px;
+      }
+
+      .phone-list a {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bolder;
+        text-decoration: none;
+        color: #000000;
+      }
+
+      footer {
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer pre {
+        margin: 0;
+        color: #fff;
+        font-size: 15px;
+      }
+
+      footer ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+
+      footer li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="fax"></div>
+    <p style="display: flex; flex-direction: column; align-items: center; font-size: 1.25rem; color: #e2e2e2; font-weight: bold;">
+      <span style="margin-top: 5px;">Powered by</span>
+      
+        
+    </p>     
+    <footer>
+      <pre>&copy; FAB 2023 - 25. All rights reserved</pre>
+      <ul>
+        <li>
+          <a href="https://www.twitter.com/AnkithBangre">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="icon-md"
+              viewBox="0 0 16 16"
+            >
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/ankith-bangre-339b03241/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="icon-md"
+              viewBox="0 0 16 16"
+            >
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://open.spotify.com/user/42v0w5hhinz8cm8a2a4ddu8s9">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="icon-md"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/ankithbangre_13">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="icon-md"
+              viewBox="0 0 13.26 13.3"
+            >
+              <path d="M6.63 3.29a3.43 3.43 0 103.42 3.44 3.43 3.43 0 00-3.42-3.44zm0 5.65a2.22 2.22 0 112.22-2.22 2.21 2.21 0 01-2.22 2.22z"></path>
+              <path d="M10.96 3.13a.8.8 0 11-.8-.8.8.8 0 01.8.8z"></path>
+              <path d="M6.63.05H3.88a5 5 0 00-1.62.31 3.31 3.31 0 00-1.18.77 3.31 3.31 0 00-.77 1.18 5.29 5.29 0 00-.35 1.62v5.5a5.22 5.22 0 00.35 1.62 3.35 3.35 0 00.77 1.19 3.42 3.42 0 001.18.76 4.75 4.75 0 001.62.31h5.5a4.75 4.75 0 001.58-.32 3.15 3.15 0 001.18-.76 3.35 3.35 0 00.82-1.18 5 5 0 00.31-1.61V3.93a5 5 0 00-.31-1.62 3.46 3.46 0 00-2-2A5 5 0 009.33.05a26.88 26.88 0 01-2.7 0zm0 1.2h2.69a3.78 3.78 0 011.24.23 2.21 2.21 0 011.27 1.27 3.67 3.67 0 01.23 1.23v5.39a3.78 3.78 0 01-.23 1.24 2.21 2.21 0 01-1.27 1.27 3.77 3.77 0 01-1.24.22H3.96a3.77 3.77 0 01-1.24-.22 2.21 2.21 0 01-1.27-1.27 3.78 3.78 0 01-.23-1.24V3.98a3.67 3.67 0 01.21-1.23A2.21 2.21 0 012.7 1.48a3.78 3.78 0 011.26-.23c.68.01.89 0 2.67 0z"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+  <script type="text/babel">
+    const HealthDashboard = () => {
+      const toggleMenu = () => {
+        const slideMenu = document.getElementById("slide-menu");
+        slideMenu.style.width =
+          slideMenu.style.width === "250px" ? "0" : "250px";
+      };
+
+      const closeMenu = () => {
+        const slideMenu = document.getElementById("slide-menu");
+        slideMenu.style.width = "0";
+      };
+      
+      return (
+        <div className="health-dashboard">
+          <div className="top-bar">
+            <div className="logo">
+              <img
+                src="https://i.ibb.co/HPr6KYX/image.png"
+                alt="FAX"
+              />
+            </div>
+            <h3
+              style={{ color: "#fff", marginTop: "100px", textAlign: "center" }}
+            >
+              Welcome to the FAX Health Navigator
+            </h3>
+            <div className="top-right-buttons">
+              <a href="w.html" className="button">
+                Home
+              </a>
+              <a href="d.html" className="button">
+                Dashboard
+              </a>
+              <a href="doc.html" className="button">
+                Docs
+              </a>
+              <a href="p.html" className="button">
+                Privacy Policy
+              </a>
+              <a href="https://fab-ab.vercel.app/aboutme.html" className="button">
+                About FAB
+              </a>
+              <a href="f.html" className="button">
+                Help
+              </a>
+              <a href="account.html" className="button">
+                Profile
+              </a>
+            </div>
+          </div>
+          <div className="sidebar">
+            <div className="menu-icon" onClick={toggleMenu}>
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon-md"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3 8C3 7.44772 3.44772 7 4 7H20C20.5523 7 21 7.44772 21 8C21 8.55228 20.5523 9 20 9H4C3.44772 9 3 8.55228 3 8ZM3 16C3 15.4477 3.44772 15 4 15H14C14.5523 15 15 15.4477 15 16C15 16.5523 14.5523 17 14 17H4C3.44772 17 3 16.5523 3 16Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <div className="slide-menu" id="slide-menu">
+              <div className="close-menu" onClick={closeMenu}>
+                <svg
+                  width="25"
+                  height="25"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.34315 6.34338L17.6569 17.6571M17.6569 6.34338L6.34315 17.6571"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <a href="w.html" onClick={closeMenu}>
+                Home
+              </a>
+              <a href="d.html" onClick={closeMenu}>
+                Dashboard
+              </a>
+              <a href="doc.html" onClick={closeMenu}>
+                Docs
+              </a>
+              <a href="p.html" onClick={closeMenu}>
+                Privacy Policy
+              </a>
+              <a href="https://fab-ab.vercel.app/aboutme.html" onClick={closeMenu}>
+                About FAB
+              </a>
+              <a href="f.html" onClick={closeMenu}>
+                Help
+              </a>
+              <a href="account.html" onClick={closeMenu}>
+                Profile
+              </a>
+            </div>
+          </div>
+          <div className="main-content">
+            <div class="card-container">
+              <div class="card">
+                <a href="a.html">
+                  <h3 class="l">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-clipboard-data"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z" />
+                      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
+                      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
+                    </svg>
+                    <br></br>
+                    <br></br>Symptom Analyzer
+                  </h3>
+                </a>
+              </div>
+              <div class="card">
+                <a href="m.html">
+                  <h3 class="l">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-medical" viewBox="0 0 16 16">
+  <path d="M7.5 5.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L6 7l-.549.317a.5.5 0 1 0 .5.866l.549-.317V8.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L8 7l.549-.317a.5.5 0 1 0-.5-.866l-.549.317zm-2 4.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+</svg>
+                    <br></br>
+                    <br></br>Health Monitor
+                  </h3>
+                </a>
+              </div>
+              <div class="card">
+                <a href="da.html">
+                  <h3 class="l">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-capsule-pill" viewBox="0 0 16 16">
+  <path d="M11.02 5.364a3 3 0 0 0-4.242-4.243L1.121 6.778a3 3 0 1 0 4.243 4.243l5.657-5.657Zm-6.413-.657 2.878-2.879a2 2 0 1 1 2.829 2.829L7.435 7.536zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8m-.5 1.042a3 3 0 0 0 0 5.917zm1 5.917a3 3 0 0 0 0-5.917z"/>
+</svg>
+                    <br></br>
+                    <br></br>Drug Analyzer
+                  </h3>
+                </a>
+              </div>
+              <div class="card">
+                <a href="fph.html">
+                  <h3 class="l">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-clipboard2-pulse"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z" />
+                      <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z" />
+                      <path d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128z" />
+                    </svg>
+                    <br></br>
+                    <br></br>Health Navigator
+                  </h3>
+                </a>
+              </div>
+              <div class="card">
+                <a href="c.html">
+                  <h3 class="l">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-opencollective"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-opacity=".4"
+                        d="M12.995 8.195c0 .937-.312 1.912-.78 2.693l1.99 1.99c.976-1.327 1.6-2.966 1.6-4.683 0-1.795-.624-3.434-1.561-4.76l-2.068 2.028c.468.781.78 1.679.78 2.732z"
+                      />
+                      <path d="M8 13.151a4.995 4.995 0 1 1 0-9.99c1.015 0 1.951.273 2.732.82l1.95-2.03a7.805 7.805 0 1 0 .04 12.449l-1.951-2.03a5.07 5.07 0 0 1-2.732.781z" />
+                    </svg>
+                    <br></br>
+                    <br></br>Health Assistant
+                  </h3>
+                </a>
+              </div>
+              <div class="card">
+                <a href="v.html">
+                  <h3 class="l">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-file-earmark-break"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M14 4.5V9h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v7H2V2a2 2 0 0 1 2-2h5.5zM13 12h1v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2h1v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1zM.5 10a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1z" />
+                    </svg>
+                    <br></br>
+                    <br></br>Document Analyzer
+                  </h3>
+                </a>
+              </div>
+              <div class="card">
+                <a onClick={() => showbm()}>
+                  <h3 class="l">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-prescription2" viewBox="0 0 16 16">
+  <path d="M7 6h2v2h2v2H9v2H7v-2H5V8h2z"/>
+  <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v10.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 14.5V4a1 1 0 0 1-1-1zm2 3v10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V4zM3 3h10V1H3z"/>
+</svg>
+                    <br></br>
+                    <br></br>Book Medicine
+                  </h3>
+                </a>
+              </div>
+              <div id="bm" className="modal">
+                <div className="modal-content">
+                  <div className="phone-list">
+                    <a><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-capsule-pill" viewBox="0 0 16 16">
+  <path d="M11.02 5.364a3 3 0 0 0-4.242-4.243L1.121 6.778a3 3 0 1 0 4.243 4.243l5.657-5.657Zm-6.413-.657 2.878-2.879a2 2 0 1 1 2.829 2.829L7.435 7.536zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8m-.5 1.042a3 3 0 0 0 0 5.917zm1 5.917a3 3 0 0 0 0-5.917z"/>
+</svg></a>
+                    <a href="https://www.1mg.com">TATA 1mg</a>
+                    <a href="https://healthplus.flipkart.com">Flipkart Health +</a>
+                    <a href="https://www.medplusmart.com">MedPlus Mart</a>
+                    <a href="https://pharmacy.amazon.com">amezon pharmacy</a>
+                    <a href="https://www.apollopharmacy.in">Apollo Pharmacy</a>
+                    <a href="https://pharmeasy.in">Pharm Easy</a>
+                    <a href="https://www.netmeds.com">netmeds</a>
+                  </div>
+                  <button
+                    style={{
+                      backgroundColor: "black",
+                      color: "white",
+                      padding: "8px 16px",
+                      border: "none",
+                      borderRadius: "10px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => closebm()}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                <a href="https://www.google.com/maps/search/hospital">
+                  <h3 class="l">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-geo-alt"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                      <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                    </svg>
+                    <br></br>
+                    <br></br>Nearby Hospitals
+                  </h3>
+                </a>
+              </div>
+              <div class="card">
+                <a onClick={() => showPhoneNumberList()}>
+                  <h3 class="l">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-clock-history"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z" />
+                      <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z" />
+                      <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5" />
+                    </svg>
+                    <br></br>
+                    <br></br>24 / 7 Helplines
+                  </h3>
+                </a>
+              </div>
+              <div id="phoneNumberModal" className="modal">
+                <div className="modal-content">
+                  <div className="phone-list">
+                    <a href="tel:1902">STATE HELPLINE NUMBER - 1902</a>
+                    <a href="tel:9745697456">
+                      EMERGENCY MEDICAL SUPPORT - 9745697456
+                    </a>
+                    <a href="tel:9980299802">
+                      STATE COVID CONTROL ROOM - 9980299802
+                    </a>
+                    <a href="tel:102">AMBULANCE - 102</a>
+                    <a href="tel:181">WOMEN - 181</a>
+                    <a href="tel:100">POLICE - 100</a>
+                    <a href="tel:101">Fire and Rescue - 101</a>
+                    <a href="tel:104">HEALTH & FAMILY WELFARE - 104</a>
+                    <a href="tel:1089">Children Helpline - 1089</a>
+                  </div>
+                  <button
+                    style={{
+                      backgroundColor: "black",
+                      color: "white",
+                      padding: "8px 16px",
+                      border: "none",
+                      borderRadius: "10px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => closePhoneNumberList()}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+    function showPhoneNumberList() {
+      var modal = document.getElementById("phoneNumberModal");
+      modal.style.display = "flex";
+    }
+
+    function showbm() {
+      var modal = document.getElementById("bm");
+      modal.style.display = "flex";
+    }
+
+    function closebm() {
+      var modal = document.getElementById("bm");
+      modal.style.display = "none";
+    }
+
+    function closePhoneNumberList() {
+      var modal = document.getElementById("phoneNumberModal");
+      modal.style.display = "none";
+    }
+
+    ReactDOM.render(<HealthDashboard />, document.getElementById("fax"));
+  </script>
+  <style>.c{display:none;position:fixed;bottom:0;left:0;right:0;background:#ff5555;color:#fff;align-items:center;justify-content:center}.spinner{width:20px;height:20px;border:2px solid transparent;border-top:2px solid #fff;border-radius:50%;animation:spin 1s linear infinite;margin-right:10px}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style></head>
+  <body><div class="c" id="no-internet-card"><div class="spinner"></div><h4>Failed to load data, retrying....</h4></div><script>function updateOnlineStatus(){document.getElementById('no-internet-card').style.display=navigator.onLine?'none':'flex'}window.addEventListener('online',updateOnlineStatus);window.addEventListener('offline',updateOnlineStatus);updateOnlineStatus();</script></body>  
+</html>

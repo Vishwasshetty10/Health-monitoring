@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/DGGw2MD/image.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAX Symptom Analyzer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.5/babel.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(140deg, #10121B 0%, #060606 100%);
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 10px;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #000000;
+        margin: 15px;
+        text-align: center;
+      }
+
+      h2{
+        text-align: center;
+      }
+
+      input,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 2px solid black;
+        box-sizing: border-box;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+
+      button {
+        background: linear-gradient(85deg, #ff2a86, #ff9900);
+        font-weight: bolder;
+        font-size: larger;
+        margin-top: -5px;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+
+p{
+  font-weight:bold;
+  margin-bottom:auto;
+}
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        cursor: pointer;
+        padding: 12px;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+      }
+      li:hover{
+        border: 2px solid black;
+      }
+
+      .symptom-list {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .selected-symptoms {
+        margin-top: 20px;
+      }
+
+      .symptoms-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (min-width: 768px) {
+        .symptoms-container {
+          flex-direction: row;
+        }
+        .add-symptoms,
+        .selected-symptoms {
+          flex: 1;
+          margin-right: 20px;
+        }
+      }
+
+      @media only screen and (min-width: 601px) {
+        .container {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        button {
+          width: 100%;
+        }
+      }
+
+      .selected {
+        background-color: #c8e6c9;
+        color: #388e3c;
+      }
+      .popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bi-opencollective {
+  animation: rotate360 1s linear infinite;
+  margin-right: 10px;
+}
+
+.popup-content p {
+  margin: 0;
+}
+
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #000000;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidebar a {
+        text-align: left;
+        padding: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: larger;
+        color: #ffffff;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        background-color: transparent !important;
+        margin-left: 50px;
+      }
+
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        margin-left: 1px;
+      }
+
+      #main {
+        transition: margin-left 0.5s;
+        padding: 2px;
+      }
+      #google_translate_element {
+        display: flex;
+        margin-top: -10px;
+      }
+
+      .goog-te-combo {
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .goog-te-gadget {
+        color: #000000;
+      }
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+      .bi-trash3{
+        margin-left: 10px;
+        margin-bottom: -3px;
+      }
+      footer {
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer pre {
+        margin: 0;
+        color: #fff;
+      }
+
+      footer ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+
+      footer li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      .di {
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: linear-gradient(310deg, rgb(225, 233, 255), #d2b5fd);
+  color: #000000;
+}
+    </style>
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <a
+        href="javascript:void(0)"
+        class="closebtn"
+        onclick="closeNav()"
+        style="color: #ffffff"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          fill="currentColor"
+          class="bi bi-x"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </a>
+      <a href="d.html">FAX</a>
+      <a id="login-signup" href="login_fph.html">Login / Sign Up</a>
+      <a href="aboutme.html">AB - NC</a>
+      <a><p id="google_translate_element"></p></a>
+    </div>
+    <div id="main">
+      <label class="openbtn" onclick="openNav()"
+        ><svg width="20" height="20">
+          <path
+            d="M3 8C3 7.44772 3.44772 7 4 7H20C20.5523 7 21 7.44772 21 8C21 8.55228 20.5523 9 20 9H4C3.44772 9 3 8.55228 3 8ZM3 16C3 15.4477 3.44772 15 4 15H14C14.5523 15 15 15.4477 15 16C15 16.5523 14.5523 17 14 17H4C3.44772 17 3 16.5523 3 16Z"
+            fill="white"
+          ></path>
+        </svg>
+      </label>
+    </div>
+    <header>
+      <h1>
+        <p href="a.html" style="margin-top: -50px">
+          <img
+            style="width: 55px"
+            src="https://i.ibb.co/VBK3rpb/1-removebg-preview.png"
+            alt="FAX"
+          />
+        </p>
+      </h1>
+    </header>
+    <div id="fax"></div>
+    <p style="color: #fff; text-align: center;padding: 30px;">Welcome to Symptom Analyzer, your trusted health companion designed to provide insightful assessments. Developed by FAB, our innovative FAX AI SLM module offers an accuracy result up to 45%, ensuring that you receive reliable guidance on your health concerns</p>
+    <p style="color: #fff; text-align: center;">" Fax can make mistakes. It's like a first aid step to acquire healthcare info. "</p>
+    <footer>
+      <pre>&copy; FAB 2023-24. All rights reserved</pre>
+        <ul style="list-style: none;display: flex;align-items: center;justify-content: center; gap: 10px;margin: 0;padding: 0;">
+            <li style="margin: 0; background-color: #00000000; border:none;"><a href="https://www.twitter.com/AnkithBangre"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"  viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/></svg></a></li>
+            <li style="margin: 0; background-color: #00000000; border:none;"><a href="https://www.linkedin.com/in/ankith-bangre-339b03241/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"  viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"/></svg></a></li>
+            <li style="margin: 0; background-color: #00000000; border:none;"><a href="https://open.spotify.com/user/42v0w5hhinz8cm8a2a4ddu8s9"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"  viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/></svg></a></li>
+            <li style="margin: 0; background-color: #00000000; border:none;"><a href="https://www.instagram.com/ankithbangre_13"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 13.26 13.3"><path d="M6.63 3.29a3.43 3.43 0 103.42 3.44 3.43 3.43 0 00-3.42-3.44zm0 5.65a2.22 2.22 0 112.22-2.22 2.21 2.21 0 01-2.22 2.22z" ></path><path d="M10.96 3.13a.8.8 0 11-.8-.8.8.8 0 01.8.8z"></path><path d="M6.63.05H3.88a5 5 0 00-1.62.31 3.31 3.31 0 00-1.18.77 3.31 3.31 0 00-.77 1.18 5.29 5.29 0 00-.35 1.62v5.5a5.22 5.22 0 00.35 1.62 3.35 3.35 0 00.77 1.19 3.42 3.42 0 001.18.76 4.75 4.75 0 001.62.31h5.5a4.75 4.75 0 001.58-.32 3.15 3.15 0 001.18-.76 3.35 3.35 0 00.82-1.18 5 5 0 00.31-1.61V3.93a5 5 0 00-.31-1.62 3.46 3.46 0 00-2-2A5 5 0 009.33.05a26.88 26.88 0 01-2.7 0zm0 1.2h2.69a3.78 3.78 0 011.24.23 2.21 2.21 0 011.27 1.27 3.67 3.67 0 01.23 1.23v5.39a3.78 3.78 0 01-.23 1.24 2.21 2.21 0 01-1.27 1.27 3.77 3.77 0 01-1.24.22H3.96a3.77 3.77 0 01-1.24-.22 2.21 2.21 0 01-1.27-1.27 3.78 3.78 0 01-.23-1.24V3.98a3.67 3.67 0 01.21-1.23A2.21 2.21 0 012.7 1.48a3.78 3.78 0 011.26-.23c.68.01.89 0 2.67 0z"></path></svg></a></li>
+        </ul>
+    </footer>
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      const SymptomAnalyzer = () => {
+        const [symptom, setSymptom] = useState("");
+        const [allSymptoms, setAllSymptoms] = useState([]);
+        const [filteredSymptoms, setFilteredSymptoms] = useState([]);
+        const [selectedSymptoms, setSelectedSymptoms] = useState([]);
+        const [results, setResults] = useState({});
+        const [diseaseInfo, setDiseaseInfo] = useState(null);
+        const [isAnalyzing, setIsAnalyzing] = useState(false);
+
+        useEffect(() => {
+          const fetchSymptoms = async () => {
+            try {
+              const response = await axios.get("/symptoms");
+              setAllSymptoms(response.data);
+            } catch (error) {
+              console.error("Error fetching symptoms:", error);
+            }
+          };
+          fetchSymptoms();
+        }, []);
+
+        useEffect(() => {
+          if (symptom) {
+            const filtered = allSymptoms.filter((s) =>
+              s.toLowerCase().includes(symptom.toLowerCase())
+            );
+            setFilteredSymptoms(filtered);
+          } else {
+            setFilteredSymptoms([]);
+          }
+        }, [symptom, allSymptoms]);
+
+        const handleAddSymptom = (symptom) => {
+          if (symptom && !selectedSymptoms.includes(symptom)) {
+            setSelectedSymptoms([...selectedSymptoms, symptom]);
+          }
+          setSymptom("");
+          setFilteredSymptoms([]);
+        };
+
+        const handleSubmit = async (event) => {
+          event.preventDefault();
+          setIsAnalyzing(true);
+          try {
+            const response = await axios.post("/analyze", {
+              symptoms: selectedSymptoms,
+            });
+            setResults(response.data);
+            setDiseaseInfo(null);
+            setTimeout(() => {
+              setIsAnalyzing(false);
+            }, 2000);
+          } catch (error) {
+            console.error("Error fetching data:", error);
+            setIsAnalyzing(false);
+          }
+        };
+
+        const handleDiseaseClick = (disease) => {
+          const fetchDiseaseInfo = async () => {
+            try {
+              const response = await axios.get("/disease_info", {
+                params: { disease },
+              });
+              setDiseaseInfo(response.data);
+            } catch (error) {
+              console.error("Error fetching disease info:", error);
+            }
+          };
+          fetchDiseaseInfo();
+        };
+
+        const handleRemoveSymptom = (symptomToRemove) => {
+          const updatedSymptoms = selectedSymptoms.filter(
+            (symptom) => symptom !== symptomToRemove
+          );
+          setSelectedSymptoms(updatedSymptoms);
+        };
+
+        const sortedResults = Object.entries(results).sort(
+          ([, a], [, b]) => b - a
+        );
+
+        return (
+          <div className="container">
+            <h2>Symptom Analyzer</h2>
+            <div onSubmit={handleSubmit} className="symptoms-container">
+              <div className="add-symptoms">
+                <p>Add Symptom:</p>
+                <input
+                  type="text"
+                  placeholder="Drop Your Symptoms (ctrl+b)"
+                  value={symptom}
+                  id="searchBox"
+                  onChange={(e) => setSymptom(e.target.value)}
+                />
+              <ul className="symptom-list">
+                {filteredSymptoms.map((s, index) => (
+                  <li key={index}  className={selectedSymptoms.includes(s) ? "selected" : ""} onClick={() => handleAddSymptom(s)}>
+                    {s}
+                  </li>
+                ))}
+              </ul>
+              <button type="submit" onClick={handleSubmit}>Analyze</button>
+            </div>
+          </div>
+            {selectedSymptoms.length > 0 && (
+              <div className="selected-symptoms">
+                <p>Selected Symptoms</p>
+                <ul>
+                  {selectedSymptoms.map((symptom, index) => (
+                    <li key={index}>
+                      {symptom}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        onClick={() => handleRemoveSymptom(symptom)}
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        className="bi bi-trash3"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                      </svg>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {isAnalyzing && (
+              <div className="popup">
+                <div className="popup-content">
+                  <div className="svg-container">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      className="bi bi-opencollective"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fillOpacity=".4"
+                        d="M12.995 8.195c0 .937-.312 1.912-.78 2.693l1.99 1.99c.976-1.327 1.6-2.966 1.6-4.683 0-1.795-.624-3.434-1.561-4.76l-2.068 2.028c.468.781.78 1.679.78 2.732z"
+                      />
+                      <path d="M8 13.151a4.995 4.995 0 1 1 0-9.99c1.015 0 1.951.273 2.732.82l1.95-2.03a7.805 7.805 0 1 0 .04 12.449l-1.951-2.03a5.07 5.07 0 0 1-2.732.781z" />
+                    </svg>
+                  </div>
+                  <p>Analyzing...</p>
+                </div>
+              </div>
+            )}
+            {Object.keys(results).length > 0 && !isAnalyzing && (
+              <div>
+                <h2>Symptoms Related Diseases</h2>
+                <ul>
+                  {sortedResults.map(([disease, probability]) => (
+                    <li
+                      key={disease}
+                      onClick={() => handleDiseaseClick(disease)}
+                    >
+                      {disease}: {probability.toFixed(2)}%
+                      {diseaseInfo && diseaseInfo.name === disease && (
+                        <div className="di">
+                          <p>
+                            <strong>Symptoms:</strong> {diseaseInfo.symptoms}
+                          </p>
+                          <p>
+                            <strong>Precautions:</strong>{" "}
+                            {diseaseInfo.precautions}
+                          </p>
+                          <p>
+                            <strong>Drugs:</strong> {diseaseInfo.drugs}
+                          </p>
+                          <p>
+                            <strong>Diagnosis:</strong> {diseaseInfo.diagnosis}
+                          </p>
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        );
+      };
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "350px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+          },
+          "google_translate_element"
+        );
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey && event.key === "b") {
+          document.getElementById("searchBox").focus();
+        }
+      });
+
+      ReactDOM.render(<SymptomAnalyzer />, document.getElementById("fax"));
+    </script>
+  </body>
+  <style>.c{display:none;position:fixed;bottom:0;left:0;right:0;background:#ff5555;color:#fff;align-items:center;justify-content:center}.spinner{width:20px;height:20px;border:2px solid transparent;border-top:2px solid #fff;border-radius:50%;animation:spin 1s linear infinite;margin-right:10px}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style></head>
+  <body><div class="c" id="no-internet-card"><div class="spinner"></div><h4>Failed to load data, retrying....</h4></div><script>function updateOnlineStatus(){document.getElementById('no-internet-card').style.display=navigator.onLine?'none':'flex'}window.addEventListener('online',updateOnlineStatus);window.addEventListener('offline',updateOnlineStatus);updateOnlineStatus();</script></body>  
+</html>

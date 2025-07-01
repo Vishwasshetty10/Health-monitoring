@@ -1,0 +1,493 @@
+[
+    {
+        "symptom": "Anxiety","medicines": [
+            { "name": "Diazepam", "severity": "high", "composition": { "Diazepam": "10 mg", "Lorazepam": "2 mg", "Alprazolam": "0.5 mg", "Clonazepam": "1 mg", "Buspirone": "10 mg" } },
+            { "name": "Lorazepam", "severity": "mild", "composition": { "Lorazepam": "2 mg", "Diazepam": "10 mg", "Alprazolam": "0.5 mg", "Clonazepam": "1 mg", "Buspirone": "10 mg" } },
+            { "name": "Alprazolam", "severity": "mild", "composition": { "Alprazolam": "0.5 mg", "Diazepam": "10 mg", "Lorazepam": "2 mg", "Clonazepam": "1 mg", "Buspirone": "10 mg" } },
+            { "name": "Clonazepam", "severity": "high", "composition": { "Clonazepam": "1 mg", "Diazepam": "10 mg", "Lorazepam": "2 mg", "Alprazolam": "0.5 mg", "Buspirone": "10 mg" } },
+            { "name": "Buspirone", "severity": "mild", "composition": { "Buspirone": "10 mg", "Diazepam": "10 mg", "Lorazepam": "2 mg", "Alprazolam": "0.5 mg", "Clonazepam": "1 mg" } }
+        ]},
+    {
+        "symptom": "Arm Pain","medicines": [
+            { "name": "Ibuprofen", "severity": "mild", "composition": { "Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Aspirin": "100 mg", "Codeine": "30 mg", "Naproxen": "250 mg" } },
+            { "name": "Paracetamol", "severity": "mild", "composition": { "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg", "Codeine": "30 mg", "Naproxen": "250 mg" } },
+            { "name": "Aspirin", "severity": "high", "composition": { "Aspirin": "100 mg", "Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Codeine": "30 mg", "Naproxen": "250 mg" } },
+            { "name": "Codeine", "severity": "high", "composition": { "Codeine": "30 mg", "Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Aspirin": "100 mg", "Naproxen": "250 mg" } },
+            { "name": "Naproxen", "severity": "mild", "composition": { "Naproxen": "250 mg", "Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Aspirin": "100 mg", "Codeine": "30 mg" } }
+        ]},
+    {
+        "symptom": "Abnormal Gait","medicines": [
+            { "name": "Baclofen", "severity": "high", "composition": { "Baclofen": "10 mg", "Tizanidine": "4 mg", "Diazepam": "5 mg", "Dantrolene": "25 mg", "Cyclobenzaprine": "10 mg" } },
+            { "name": "Tizanidine", "severity": "mild", "composition": { "Tizanidine": "4 mg", "Baclofen": "10 mg", "Diazepam": "5 mg", "Dantrolene": "25 mg", "Cyclobenzaprine": "10 mg" } },
+            { "name": "Diazepam", "severity": "mild", "composition": { "Diazepam": "5 mg", "Baclofen": "10 mg", "Tizanidine": "4 mg", "Dantrolene": "25 mg", "Cyclobenzaprine": "10 mg" } },
+            { "name": "Dantrolene", "severity": "high", "composition": { "Dantrolene": "25 mg", "Baclofen": "10 mg", "Tizanidine": "4 mg", "Diazepam": "5 mg", "Cyclobenzaprine": "10 mg" } },
+            { "name": "Cyclobenzaprine", "severity": "mild", "composition": { "Cyclobenzaprine": "10 mg", "Baclofen": "10 mg", "Tizanidine": "4 mg", "Diazepam": "5 mg", "Dantrolene": "25 mg" } }
+        ]},
+    {
+        "symptom": "Abdominal Pain","medicines": [
+            { "name": "Omeprazole", "severity": "mild", "composition": { "Omeprazole": "20 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg", "Calcium Carbonate": "500 mg" } },
+            { "name": "Ranitidine", "severity": "mild", "composition": { "Ranitidine": "150 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg", "Calcium Carbonate": "500 mg" } },
+            { "name": "Esomeprazole", "severity": "high", "composition": { "Esomeprazole": "40 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg", "Calcium Carbonate": "500 mg" } },
+            { "name": "Lansoprazole", "severity": "high", "composition": { "Lansoprazole": "30 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg", "Calcium Carbonate": "500 mg" } },
+            { "name": "Pantoprazole", "severity": "mild", "composition": { "Pantoprazole": "40 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg", "Calcium Carbonate": "500 mg" } }
+        ]},
+    {
+        "symptom": "Altered Sensorium","medicines": [
+            { "name": "Haloperidol", "severity": "high", "composition": { "Haloperidol": "5 mg", "Lorazepam": "2 mg", "Chlorpromazine": "50 mg", "Olanzapine": "10 mg", "Quetiapine": "100 mg" } },
+            { "name": "Olanzapine", "severity": "high", "composition": { "Olanzapine": "10 mg", "Lorazepam": "2 mg", "Chlorpromazine": "50 mg", "Haloperidol": "5 mg", "Quetiapine": "100 mg" } },
+            { "name": "Quetiapine", "severity": "mild", "composition": { "Quetiapine": "100 mg", "Lorazepam": "2 mg", "Chlorpromazine": "50 mg", "Haloperidol": "5 mg", "Olanzapine": "10 mg" } },
+            { "name": "Lorazepam", "severity": "mild", "composition": { "Lorazepam": "2 mg", "Haloperidol": "5 mg", "Chlorpromazine": "50 mg", "Olanzapine": "10 mg", "Quetiapine": "100 mg" } },
+            { "name": "Chlorpromazine", "severity": "high", "composition": { "Chlorpromazine": "50 mg", "Lorazepam": "2 mg", "Haloperidol": "5 mg", "Olanzapine": "10 mg", "Quetiapine": "100 mg" } }
+        ]},
+    {
+        "symptom": "Anisocoria","medicines": [
+            { "name": "Atropine", "severity": "high", "composition": { "Atropine": "0.5 mg", "Phenylephrine": "10 mg", "Cyclopentolate": "1 mg", "Tropicamide": "0.8 mg", "Homatropine": "2 mg" } },
+            { "name": "Phenylephrine", "severity": "mild", "composition": { "Phenylephrine": "10 mg", "Atropine": "0.5 mg", "Cyclopentolate": "1 mg", "Tropicamide": "0.8 mg", "Homatropine": "2 mg" } },
+            { "name": "Cyclopentolate", "severity": "mild", "composition": { "Cyclopentolate": "1 mg", "Atropine": "0.5 mg", "Phenylephrine": "10 mg", "Tropicamide": "0.8 mg", "Homatropine": "2 mg" } },
+            { "name": "Tropicamide", "severity": "high", "composition": { "Tropicamide": "0.8 mg", "Atropine": "0.5 mg", "Phenylephrine": "10 mg", "Cyclopentolate": "1 mg", "Homatropine": "2 mg" } },
+            { "name": "Homatropine", "severity": "high", "composition": { "Homatropine": "2 mg", "Atropine": "0.5 mg", "Phenylephrine": "10 mg", "Cyclopentolate": "1 mg", "Tropicamide": "0.8 mg" } }
+        ]},
+    {
+        "symptom": "Arm Weakness","medicines": [
+            { "name": "Prednisone", "severity": "high", "composition": { "Prednisone": "20 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Methotrexate", "severity": "high", "composition": { "Methotrexate": "10 mg", "Folic Acid": "1 mg", "Vitamin B12": "500 mcg" } },
+            { "name": "Ibuprofen", "severity": "mild", "composition": { "Ibuprofen": "200 mg", "Magnesium": "50 mg" } },
+            { "name": "Naproxen", "severity": "mild", "composition": { "Naproxen": "250 mg", "Magnesium": "50 mg" } },
+            { "name": "Aspirin", "severity": "mild", "composition": { "Aspirin": "81 mg", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Abnormal Smell","medicines": [
+            { "name": "Fluticasone", "severity": "high", "composition": { "Fluticasone": "50 mcg", "Vitamin C": "500 mg", "Zinc": "11 mg" } },
+            { "name": "Mometasone", "severity": "high", "composition": { "Mometasone": "200 mcg", "Vitamin C": "500 mg", "Zinc": "11 mg" } },
+            { "name": "Oxymetazoline", "severity": "mild", "composition": { "Oxymetazoline": "0.05%", "Vitamin C": "500 mg", "Zinc": "11 mg" } },
+            { "name": "Phenylephrine", "severity": "mild", "composition": { "Phenylephrine": "10 mg", "Vitamin C": "500 mg", "Zinc": "11 mg" } },
+            { "name": "Pseudoephedrine", "severity": "mild", "composition": { "Pseudoephedrine": "30 mg", "Vitamin C": "500 mg", "Zinc": "11 mg" } }
+        ]},
+    {
+        "symptom": "Ankle Pain","medicines": [
+            { "name": "Diclofenac", "severity": "high", "composition": { "Diclofenac": "50 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Indomethacin", "severity": "high", "composition": { "Indomethacin": "25 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Ibuprofen", "severity": "mild", "composition": { "Ibuprofen": "200 mg", "Magnesium": "50 mg" } },
+            { "name": "Naproxen", "severity": "mild", "composition": { "Naproxen": "250 mg", "Magnesium": "50 mg" } },
+            { "name": "Aspirin", "severity": "mild", "composition": { "Aspirin": "81 mg", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Abdominal Swelling","medicines": [
+            { "name": "Spironolactone", "severity": "high", "composition": { "Spironolactone": "100 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Furosemide", "severity": "high", "composition": { "Furosemide": "40 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Hydrochlorothiazide", "severity": "mild", "composition": { "Hydrochlorothiazide": "25 mg", "Magnesium": "50 mg" } },
+            { "name": "Amiloride", "severity": "mild", "composition": { "Amiloride": "5 mg", "Magnesium": "50 mg" } },
+            { "name": "Triamterene", "severity": "mild", "composition": { "Triamterene": "50 mg", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Breathlessness","medicines": [
+            { "name": "Albuterol", "severity": "high", "composition": { "Albuterol": "100 mcg", "Magnesium": "50 mg", "Vitamin C": "500 mg" } },
+            { "name": "Ipratropium", "severity": "high", "composition": { "Ipratropium": "20 mcg", "Magnesium": "50 mg", "Vitamin C": "500 mg" } },
+            { "name": "Budesonide", "severity": "mild", "composition": { "Budesonide": "200 mcg", "Magnesium": "50 mg", "Vitamin C": "500 mg" } },
+            { "name": "Salmeterol", "severity": "mild", "composition": { "Salmeterol": "50 mcg", "Magnesium": "50 mg", "Vitamin C": "500 mg" } },
+            { "name": "Montelukast", "severity": "mild", "composition": { "Montelukast": "10 mg", "Magnesium": "50 mg", "Vitamin C": "500 mg" } }
+        ]},
+    {
+        "symptom": "Breast Lumps","medicines": [
+            { "name": "Tamoxifen", "severity": "high", "composition": { "Tamoxifen": "20 mg", "Magnesium": "50 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Anastrozole", "severity": "high", "composition": { "Anastrozole": "1 mg", "Magnesium": "50 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Letrozole", "severity": "mild", "composition": { "Letrozole": "2.5 mg", "Magnesium": "50 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Exemestane", "severity": "mild", "composition": { "Exemestane": "25 mg", "Magnesium": "50 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Raloxifene", "severity": "mild", "composition": { "Raloxifene": "60 mg", "Magnesium": "50 mg", "Vitamin D": "1000 IU" } }
+        ]},
+    {
+        "symptom": "Bad Breath","medicines": [
+            { "name": "Chlorhexidine", "severity": "high", "composition": { "Chlorhexidine": "0.12%", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Metronidazole", "severity": "high", "composition": { "Metronidazole": "500 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Amoxicillin", "severity": "mild", "composition": { "Amoxicillin": "250 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Clindamycin", "severity": "mild", "composition": { "Clindamycin": "300 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Ciprofloxacin", "severity": "mild", "composition": { "Ciprofloxacin": "500 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } }
+        ]},
+    {
+        "symptom": "Blood Clots","medicines": [
+            { "name": "Warfarin", "severity": "high", "composition": { "Warfarin": "5 mg", "Magnesium": "50 mg", "Vitamin K": "100 mcg" } },
+            { "name": "Dabigatran", "severity": "high", "composition": { "Dabigatran": "150 mg", "Magnesium": "50 mg", "Vitamin K": "100 mcg" } },
+            { "name": "Rivaroxaban", "severity": "mild", "composition": { "Rivaroxaban": "20 mg", "Magnesium": "50 mg", "Vitamin K": "100 mcg" } },
+            { "name": "Apixaban", "severity": "mild", "composition": { "Apixaban": "5 mg", "Magnesium": "50 mg", "Vitamin K": "100 mcg" } },
+            { "name": "Heparin", "severity": "mild", "composition": { "Heparin": "5000 units", "Magnesium": "50 mg", "Vitamin K": "100 mcg" } }
+        ]},
+    {
+        "symptom": "Back Pain","medicines": [
+            { "name": "Ibuprofen", "severity": "mild", "composition": { "Ibuprofen": "200 mg", "Magnesium": "50 mg" } },
+            { "name": "Naproxen", "severity": "mild", "composition": { "Naproxen": "250 mg", "Magnesium": "50 mg" } },
+            { "name": "Diclofenac", "severity": "high", "composition": { "Diclofenac": "50 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Prednisone", "severity": "high", "composition": { "Prednisone": "20 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Tramadol", "severity": "high", "composition": { "Tramadol": "50 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } }
+        ]},
+    {
+        "symptom": "Blurring Vision","medicines": [
+            { "name": "Timolol", "severity": "high", "composition": { "Timolol": "0.5%", "Magnesium": "50 mg", "Vitamin A": "5000 IU" } },
+            { "name": "Latanoprost", "severity": "high", "composition": { "Latanoprost": "0.005%", "Magnesium": "50 mg", "Vitamin A": "5000 IU" } },
+            { "name": "Pilocarpine", "severity": "mild", "composition": { "Pilocarpine": "2%", "Magnesium": "50 mg", "Vitamin A": "5000 IU" } },
+            { "name": "Brimonidine", "severity": "mild", "composition": { "Brimonidine": "0.2%", "Magnesium": "50 mg", "Vitamin A": "5000 IU" } },
+            { "name": "Travoprost", "severity": "mild", "composition": { "Travoprost": "0.004%", "Magnesium": "50 mg", "Vitamin A": "5000 IU" } }
+        ]},
+    {
+        "symptom": "Breast Rash","medicines": [
+            { "name": "Hydrocortisone", "severity": "high", "composition": { "Hydrocortisone": "1%", "Magnesium": "50 mg", "Vitamin E": "100 IU" } },
+            { "name": "Clobetasol", "severity": "high", "composition": { "Clobetasol": "0.05%", "Magnesium": "50 mg", "Vitamin E": "100 IU" } },
+            { "name": "Mometasone", "severity": "mild", "composition": { "Mometasone": "0.1%", "Magnesium": "50 mg", "Vitamin E": "100 IU" } },
+            { "name": "Triamcinolone", "severity": "mild", "composition": { "Triamcinolone": "0.1%", "Magnesium": "50 mg", "Vitamin E": "100 IU" } },
+            { "name": "Betamethasone", "severity": "mild", "composition": { "Betamethasone": "0.05%", "Magnesium": "50 mg", "Vitamin E": "100 IU" } }
+        ]},
+    {
+        "symptom": "Bloating","medicines": [
+            { "name": "Simethicone", "severity": "high", "composition": { "Simethicone": "125 mg", "Magnesium": "50 mg", "Peppermint Oil": "0.2 mL" } },
+            { "name": "Rifaximin", "severity": "high", "composition": { "Rifaximin": "550 mg", "Magnesium": "50 mg", "Peppermint Oil": "0.2 mL" } },
+            { "name": "Dicyclomine", "severity": "mild", "composition": { "Dicyclomine": "10 mg", "Magnesium": "50 mg", "Peppermint Oil": "0.2 mL" } },
+            { "name": "Lactase", "severity": "mild", "composition": { "Lactase": "3000 FCC", "Magnesium": "50 mg", "Peppermint Oil": "0.2 mL" } },
+            { "name": "Activated Charcoal", "severity": "mild", "composition": { "Activated Charcoal": "250 mg", "Magnesium": "50 mg", "Peppermint Oil": "0.2 mL" } }
+        ]},
+    {
+        "symptom": "Blackouts","medicines": [
+            { "name": "Midodrine", "severity": "high", "composition": { "Midodrine": "5 mg", "Magnesium": "50 mg", "Vitamin B12": "1000 mcg" } },
+            { "name": "Fludrocortisone", "severity": "high", "composition": { "Fludrocortisone": "0.1 mg", "Magnesium": "50 mg", "Vitamin B12": "1000 mcg" } },
+            { "name": "Propranolol", "severity": "mild", "composition": { "Propranolol": "10 mg", "Magnesium": "50 mg", "Vitamin B12": "1000 mcg" } },
+            { "name": "Atenolol", "severity": "mild", "composition": { "Atenolol": "50 mg", "Magnesium": "50 mg", "Vitamin B12": "1000 mcg" } },
+            { "name": "Metoprolol", "severity": "mild", "composition": { "Metoprolol": "25 mg", "Magnesium": "50 mg", "Vitamin B12": "1000 mcg" } }
+        ]},
+    {
+        "symptom": "Bad Taste in Mouth","medicines": [
+            { "name": "Chlorhexidine", "severity": "high", "composition": { "Chlorhexidine": "0.12%", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Metronidazole", "severity": "high", "composition": { "Metronidazole": "500 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Amoxicillin", "severity": "mild", "composition": { "Amoxicillin": "250 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Clindamycin", "severity": "mild", "composition": { "Clindamycin": "300 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Ciprofloxacin", "severity": "mild", "composition": { "Ciprofloxacin": "500 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } }
+        ]},
+    {
+        "symptom": "Burning Eyes","medicines": [
+            { "name": "Artificial Tears", "severity": "mild", "composition": { "Carboxymethylcellulose": "0.5%", "Magnesium": "50 mg" } },
+            { "name": "Cyclosporine", "severity": "high", "composition": { "Cyclosporine": "0.05%", "Magnesium": "50 mg" } },
+            { "name": "Lifitegrast", "severity": "high", "composition": { "Lifitegrast": "5%", "Magnesium": "50 mg" } },
+            { "name": "Prednisolone", "severity": "mild", "composition": { "Prednisolone": "1%", "Magnesium": "50 mg" } },
+            { "name": "Tetrahydrozoline", "severity": "mild", "composition": { "Tetrahydrozoline": "0.05%", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Bruxism","medicines": [
+            { "name": "Diazepam", "severity": "high", "composition": { "Diazepam": "5 mg", "Magnesium": "50 mg" } },
+            { "name": "Clonazepam", "severity": "high", "composition": { "Clonazepam": "1 mg", "Magnesium": "50 mg" } },
+            { "name": "Buspirone", "severity": "mild", "composition": { "Buspirone": "10 mg", "Magnesium": "50 mg" } },
+            { "name": "Amitriptyline", "severity": "mild", "composition": { "Amitriptyline": "10 mg", "Magnesium": "50 mg" } },
+            { "name": "Botulinum Toxin", "severity": "mild", "composition": { "Botulinum Toxin": "50 units", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Bleeding after sex","medicines": [
+            { "name": "Metronidazole", "severity": "high", "composition": { "Metronidazole": "500 mg", "Magnesium": "50 mg" } },
+            { "name": "Clindamycin", "severity": "high", "composition": { "Clindamycin": "300 mg", "Magnesium": "50 mg" } },
+            { "name": "Doxycycline", "severity": "mild", "composition": { "Doxycycline": "100 mg", "Magnesium": "50 mg" } },
+            { "name": "Fluconazole", "severity": "mild", "composition": { "Fluconazole": "150 mg", "Magnesium": "50 mg" } },
+            { "name": "Azithromycin", "severity": "mild", "composition": { "Azithromycin": "250 mg", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Bleeding while passing stools","medicines": [
+            { "name": "Hydrocortisone", "severity": "high", "composition": { "Hydrocortisone": "1%", "Magnesium": "50 mg" } },
+            { "name": "Lidocaine", "severity": "high", "composition": { "Lidocaine": "2%", "Magnesium": "50 mg" } },
+            { "name": "Diosmin", "severity": "mild", "composition": { "Diosmin": "450 mg", "Magnesium": "50 mg" } },
+            { "name": "Hesperidin", "severity": "mild", "composition": { "Hesperidin": "50 mg", "Magnesium": "50 mg" } },
+            { "name": "Witch Hazel", "severity": "mild", "composition": { "Witch Hazel": "50 mg", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Breast Pain","medicines": [
+            { "name": "Ibuprofen", "severity": "mild", "composition": { "Ibuprofen": "200 mg", "Magnesium": "50 mg" } },
+            { "name": "Naproxen", "severity": "mild", "composition": { "Naproxen": "250 mg", "Magnesium": "50 mg" } },
+            { "name": "Tamoxifen", "severity": "high", "composition": { "Tamoxifen": "20 mg", "Magnesium": "50 mg" } },
+            { "name": "Danazol", "severity": "high", "composition": { "Danazol": "100 mg", "Magnesium": "50 mg" } },
+            { "name": "Bromocriptine", "severity": "high", "composition": { "Bromocriptine": "2.5 mg", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Bleeding Gums","medicines": [
+            { "name": "Chlorhexidine", "severity": "high", "composition": { "Chlorhexidine": "0.12%", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Metronidazole", "severity": "high", "composition": { "Metronidazole": "500 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Amoxicillin", "severity": "mild", "composition": { "Amoxicillin": "250 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Clindamycin", "severity": "mild", "composition": { "Clindamycin": "300 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } },
+            { "name": "Ciprofloxacin", "severity": "mild", "composition": { "Ciprofloxacin": "500 mg", "Magnesium": "50 mg", "Zinc": "11 mg" } }
+        ]},
+    {
+        "symptom": "Bone Fracture","medicines": [
+            { "name": "Ibuprofen", "severity": "mild", "composition": { "Ibuprofen": "200 mg", "Magnesium": "50 mg" } },
+            { "name": "Naproxen", "severity": "mild", "composition": { "Naproxen": "250 mg", "Magnesium": "50 mg" } },
+            { "name": "Diclofenac", "severity": "high", "composition": { "Diclofenac": "50 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Prednisone", "severity": "high", "composition": { "Prednisone": "20 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } },
+            { "name": "Tramadol", "severity": "high", "composition": { "Tramadol": "50 mg", "Magnesium": "50 mg", "Calcium": "500 mg", "Vitamin D": "1000 IU" } }
+        ]},
+    {
+        "symptom": "Burning Urine","medicines": [
+            { "name": "Phenazopyridine", "severity": "high", "composition": { "Phenazopyridine": "200 mg", "Magnesium": "50 mg" } },
+            { "name": "Trimethoprim", "severity": "high", "composition": { "Trimethoprim": "100 mg", "Magnesium": "50 mg" } },
+            { "name": "Ciprofloxacin", "severity": "mild", "composition": { "Ciprofloxacin": "500 mg", "Magnesium": "50 mg" } },
+            { "name": "Amoxicillin", "severity": "mild", "composition": { "Amoxicillin": "500 mg", "Magnesium": "50 mg" } },
+            { "name": "Nitrofurantoin", "severity": "mild", "composition": { "Nitrofurantoin": "100 mg", "Magnesium": "50 mg" } }
+        ]},
+    {
+        "symptom": "Chest Pain","medicines": [
+            { "name": "Nitroglycerin", "severity": "high", "composition": { "Nitroglycerin": "0.4 mg", "Aspirin": "325 mg", "Oxygen": "2 L/min" } },
+            { "name": "Morphine", "severity": "high", "composition": { "Morphine": "2 mg", "Aspirin": "325 mg", "Oxygen": "2 L/min" } },
+            { "name": "Aspirin", "severity": "mild", "composition": { "Aspirin": "325 mg", "Oxygen": "2 L/min" } },
+            { "name": "Acetaminophen", "severity": "mild", "composition": { "Acetaminophen": "500 mg", "Oxygen": "2 L/min" } },
+            { "name": "Ibuprofen", "severity": "mild", "composition": { "Ibuprofen": "400 mg", "Oxygen": "2 L/min" } }
+        ]},
+    {"symptom": "Headache", "medicines": [
+        {"name": "Ibuprofen", "severity": "mild", "composition": {"Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Caffeine": "65 mg", "Aspirin": "100 mg"}},
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Caffeine": "65 mg", "Aspirin": "100 mg"}},
+        {"name": "Aspirin", "severity": "high", "composition": {"Aspirin": "100 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Caffeine": "65 mg"}},
+        {"name": "Naproxen", "severity": "high", "composition": {"Naproxen": "250 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Caffeine": "65 mg"}},
+        {"name": "Diclofenac", "severity": "mild", "composition": {"Diclofenac": "50 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Caffeine": "65 mg"}}
+    ]},
+    {"symptom": "Cough", "medicines": [
+        {"name": "Dextromethorphan", "severity": "mild", "composition": {"Dextromethorphan": "15 mg", "Guaifenesin": "200 mg", "Phenylephrine": "5 mg", "Diphenhydramine": "25 mg"}},
+        {"name": "Guaifenesin", "severity": "mild", "composition": {"Guaifenesin": "200 mg", "Dextromethorphan": "15 mg", "Phenylephrine": "5 mg", "Diphenhydramine": "25 mg"}},
+        {"name": "Codeine", "severity": "high", "composition": {"Codeine": "10 mg", "Guaifenesin": "200 mg", "Phenylephrine": "5 mg", "Diphenhydramine": "25 mg"}},
+        {"name": "Diphenhydramine", "severity": "high", "composition": {"Diphenhydramine": "25 mg", "Guaifenesin": "200 mg", "Dextromethorphan": "15 mg", "Phenylephrine": "5 mg"}},
+        {"name": "Benzonatate", "severity": "mild", "composition": {"Benzonatate": "100 mg", "Guaifenesin": "200 mg", "Dextromethorphan": "15 mg", "Phenylephrine": "5 mg"}}
+    ]},
+    {"symptom": "Fever", "medicines": [
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg", "Naproxen": "250 mg"}},
+        {"name": "Dolo 650", "severity": "high", "composition": {"Paracetamol": "650 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg"}},
+        {"name": "Aspirin", "severity": "high", "composition": {"Aspirin": "100 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}},
+        {"name": "Naproxen", "severity": "high", "composition": {"Naproxen": "250 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg"}},
+        {"name": "Diclofenac", "severity": "mild", "composition": {"Diclofenac": "50 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg"}}
+    ]},
+    {"symptom": "Nausea", "medicines": [
+        {"name": "Ondansetron", "severity": "mild", "composition": {"Ondansetron": "4 mg", "Metoclopramide": "10 mg", "Prochlorperazine": "5 mg", "Promethazine": "25 mg"}},
+        {"name": "Metoclopramide", "severity": "mild", "composition": {"Metoclopramide": "10 mg", "Ondansetron": "4 mg", "Prochlorperazine": "5 mg", "Promethazine": "25 mg"}},
+        {"name": "Prochlorperazine", "severity": "high", "composition": {"Prochlorperazine": "5 mg", "Ondansetron": "4 mg", "Metoclopramide": "10 mg", "Promethazine": "25 mg"}},
+        {"name": "Promethazine", "severity": "high", "composition": {"Promethazine": "25 mg", "Ondansetron": "4 mg", "Metoclopramide": "10 mg", "Prochlorperazine": "5 mg"}},
+        {"name": "Dimenhydrinate", "severity": "mild", "composition": {"Dimenhydrinate": "50 mg", "Ondansetron": "4 mg", "Metoclopramide": "10 mg", "Prochlorperazine": "5 mg"}}
+    ]},
+    {"symptom": "Sore Throat", "medicines": [
+        {"name": "Amoxicillin", "severity": "mild", "composition": {"Amoxicillin": "500 mg", "Clavulanate": "125 mg", "Azithromycin": "250 mg", "Cefuroxime": "250 mg"}},
+        {"name": "Azithromycin", "severity": "mild", "composition": {"Azithromycin": "250 mg", "Amoxicillin": "500 mg", "Clavulanate": "125 mg", "Cefuroxime": "250 mg"}},
+        {"name": "Cefuroxime", "severity": "high", "composition": {"Cefuroxime": "250 mg", "Amoxicillin": "500 mg", "Clavulanate": "125 mg", "Azithromycin": "250 mg"}},
+        {"name": "Clindamycin", "severity": "high", "composition": {"Clindamycin": "300 mg", "Amoxicillin": "500 mg", "Clavulanate": "125 mg", "Azithromycin": "250 mg"}},
+        {"name": "Clarithromycin", "severity": "mild", "composition": {"Clarithromycin": "250 mg", "Amoxicillin": "500 mg", "Clavulanate": "125 mg", "Azithromycin": "250 mg"}}
+    ]},
+    {"symptom": "Wet Cough", "medicines": [
+        {"name": "Guaifenesin", "severity": "mild", "composition": {"Guaifenesin": "200 mg", "Dextromethorphan": "15 mg", "Phenylephrine": "5 mg", "Diphenhydramine": "25 mg"}},
+        {"name": "Dextromethorphan", "severity": "mild", "composition": {"Dextromethorphan": "15 mg", "Guaifenesin": "200 mg", "Phenylephrine": "5 mg", "Diphenhydramine": "25 mg"}},
+        {"name": "Bromhexine", "severity": "high", "composition": {"Bromhexine": "8 mg", "Guaifenesin": "200 mg", "Phenylephrine": "5 mg", "Diphenhydramine": "25 mg"}},
+        {"name": "Ambroxol", "severity": "high", "composition": {"Ambroxol": "30 mg", "Guaifenesin": "200 mg", "Dextromethorphan": "15 mg", "Phenylephrine": "5 mg"}},
+        {"name": "Carbocisteine", "severity": "mild", "composition": {"Carbocisteine": "375 mg", "Guaifenesin": "200 mg", "Dextromethorphan": "15 mg", "Phenylephrine": "5 mg"}}
+    ]},
+    {"symptom": "Sneezing", "medicines": [
+        {"name": "Cetirizine", "severity": "mild", "composition": {"Cetirizine": "10 mg", "Loratadine": "10 mg", "Diphenhydramine": "25 mg", "Chlorpheniramine": "4 mg"}},
+        {"name": "Loratadine", "severity": "mild", "composition": {"Loratadine": "10 mg", "Cetirizine": "10 mg", "Diphenhydramine": "25 mg", "Chlorpheniramine": "4 mg"}},
+        {"name": "Diphenhydramine", "severity": "high", "composition": {"Diphenhydramine": "25 mg", "Cetirizine": "10 mg", "Loratadine": "10 mg", "Chlorpheniramine": "4 mg"}},
+        {"name": "Fexofenadine", "severity": "high", "composition": {"Fexofenadine": "180 mg", "Cetirizine": "10 mg", "Loratadine": "10 mg", "Diphenhydramine": "25 mg"}},
+        {"name": "Chlorpheniramine", "severity": "mild", "composition": {"Chlorpheniramine": "4 mg", "Cetirizine": "10 mg", "Loratadine": "10 mg", "Diphenhydramine": "25 mg"}}
+    ]},
+    {"symptom": "Runny Nose", "medicines": [
+        {"name": "Cetirizine", "severity": "mild", "composition": {"Cetirizine": "10 mg", "Loratadine": "10 mg", "Diphenhydramine": "25 mg", "Chlorpheniramine": "4 mg"}},
+        {"name": "Loratadine", "severity": "mild", "composition": {"Loratadine": "10 mg", "Cetirizine": "10 mg", "Diphenhydramine": "25 mg", "Chlorpheniramine": "4 mg"}},
+        {"name": "Diphenhydramine", "severity": "high", "composition": {"Diphenhydramine": "25 mg", "Cetirizine": "10 mg", "Loratadine": "10 mg", "Chlorpheniramine": "4 mg"}},
+        {"name": "Fexofenadine", "severity": "high", "composition": {"Fexofenadine": "180 mg", "Cetirizine": "10 mg", "Loratadine": "10 mg", "Diphenhydramine": "25 mg"}},
+        {"name": "Chlorpheniramine", "severity": "mild", "composition": {"Chlorpheniramine": "4 mg", "Cetirizine": "10 mg", "Loratadine": "10 mg", "Diphenhydramine": "25 mg"}}
+    ]},
+    {"symptom": "Chill", "medicines": [
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg", "Naproxen": "250 mg"}},
+        {"name": "Ibuprofen", "severity": "mild", "composition": {"Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Aspirin": "100 mg", "Naproxen": "250 mg"}},
+        {"name": "Aspirin", "severity": "high", "composition": {"Aspirin": "100 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}},
+        {"name": "Naproxen", "severity": "high", "composition": {"Naproxen": "250 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg"}},
+        {"name": "Diclofenac", "severity": "mild", "composition": {"Diclofenac": "50 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg"}}
+    ]},
+    {"symptom": "Abdominal Pain", "medicines": [
+        {"name": "Omeprazole", "severity": "mild", "composition": {"Omeprazole": "20 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg"}},
+        {"name": "Ranitidine", "severity": "mild", "composition": {"Ranitidine": "150 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg"}},
+        {"name": "Esomeprazole", "severity": "high", "composition": {"Esomeprazole": "40 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg"}},
+        {"name": "Lansoprazole", "severity": "high", "composition": {"Lansoprazole": "30 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg"}},
+        {"name": "Pantoprazole", "severity": "mild", "composition": {"Pantoprazole": "40 mg", "Magnesium": "50 mg", "Aluminum Hydroxide": "300 mg", "Simethicone": "125 mg"}}
+    ]},
+    {"symptom": "Anal Pain", "medicines": [
+        {"name": "Lidocaine", "severity": "mild", "composition": {"Lidocaine": "5%", "Hydrocortisone": "1%", "Phenylephrine": "0.25%", "Zinc Oxide": "20%"}},
+        {"name": "Hydrocortisone", "severity": "mild", "composition": {"Hydrocortisone": "1%", "Lidocaine": "5%", "Phenylephrine": "0.25%", "Zinc Oxide": "20%"}},
+        {"name": "Phenylephrine", "severity": "high", "composition": {"Phenylephrine": "0.25%", "Lidocaine": "5%", "Hydrocortisone": "1%", "Zinc Oxide": "20%"}},
+        {"name": "Pramoxine", "severity": "high", "composition": {"Pramoxine": "1%", "Lidocaine": "5%", "Hydrocortisone": "1%", "Phenylephrine": "0.25%"}},
+        {"name": "Witch Hazel", "severity": "mild", "composition": {"Witch Hazel": "50%", "Lidocaine": "5%", "Hydrocortisone": "1%", "Phenylephrine": "0.25%"}}
+    ]},
+    {"symptom": "Ankle Pain", "medicines": [
+        {"name": "Ibuprofen", "severity": "mild", "composition": {"Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}},
+        {"name": "Diclofenac", "severity": "mild", "composition": {"Diclofenac": "50 mg", "Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Naproxen": "250 mg"}},
+        {"name": "Naproxen", "severity": "high", "composition": {"Naproxen": "250 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Paracetamol": "500 mg"}},
+        {"name": "Paracetamol", "severity": "high", "composition": {"Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}},
+        {"name": "Ketoprofen", "severity": "mild", "composition": {"Ketoprofen": "100 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}}
+    ]},
+    {"symptom": "Arm Pain", "medicines": [
+        {"name": "Ibuprofen", "severity": "mild", "composition": {"Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}},
+        {"name": "Diclofenac", "severity": "mild", "composition": {"Diclofenac": "50 mg", "Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Naproxen": "250 mg"}},
+        {"name": "Naproxen", "severity": "high", "composition": {"Naproxen": "250 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Paracetamol": "500 mg"}},
+        {"name": "Paracetamol", "severity": "high", "composition": {"Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}},
+        {"name": "Ketoprofen", "severity": "mild", "composition": {"Ketoprofen": "100 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}}
+    ]},
+    {"symptom": "Back Pain", "medicines": [
+        {"name": "Ibuprofen", "severity": "mild", "composition": {"Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}},
+        {"name": "Diclofenac", "severity": "mild", "composition": {"Diclofenac": "50 mg", "Ibuprofen": "200 mg", "Paracetamol": "500 mg", "Naproxen": "250 mg"}},
+        {"name": "Naproxen", "severity": "high", "composition": {"Naproxen": "250 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Paracetamol": "500 mg"}},
+        {"name": "Paracetamol", "severity": "high", "composition": {"Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}},
+        {"name": "Ketoprofen", "severity": "mild", "composition": {"Ketoprofen": "100 mg", "Ibuprofen": "200 mg", "Diclofenac": "50 mg", "Naproxen": "250 mg"}}
+    ]},
+    {"symptom": "Bent Penis", "medicines": [
+        {"name": "Collagenase", "severity": "high", "composition": {"Collagenase": "0.58 mg", "Verapamil": "10 mg", "Pentoxifylline": "400 mg", "Tamoxifen": "20 mg"}},
+        {"name": "Verapamil", "severity": "mild", "composition": {"Verapamil": "10 mg", "Collagenase": "0.58 mg", "Pentoxifylline": "400 mg", "Tamoxifen": "20 mg"}},
+        {"name": "Pentoxifylline", "severity": "mild", "composition": {"Pentoxifylline": "400 mg", "Collagenase": "0.58 mg", "Verapamil": "10 mg", "Tamoxifen": "20 mg"}},
+        {"name": "Tamoxifen", "severity": "high", "composition": {"Tamoxifen": "20 mg", "Collagenase": "0.58 mg", "Verapamil": "10 mg", "Pentoxifylline": "400 mg"}},
+        {"name": "Vitamin E", "severity": "mild", "composition": {"Vitamin E": "400 IU", "Collagenase": "0.58 mg", "Verapamil": "10 mg", "Pentoxifylline": "400 mg"}}
+    ]},
+    {"symptom": "Bleeding During Pregnancy", "medicines": [
+        {"name": "Progesterone", "severity": "high", "composition": {"Progesterone": "200 mg", "Dydrogesterone": "10 mg", "Tranexamic Acid": "500 mg", "Ethamsylate": "250 mg"}},
+        {"name": "Dydrogesterone", "severity": "mild", "composition": {"Dydrogesterone": "10 mg", "Progesterone": "200 mg", "Tranexamic Acid": "500 mg", "Ethamsylate": "250 mg"}},
+        {"name": "Tranexamic Acid", "severity": "high", "composition": {"Tranexamic Acid": "500 mg", "Progesterone": "200 mg", "Dydrogesterone": "10 mg", "Ethamsylate": "250 mg"}},
+        {"name": "Ethamsylate", "severity": "mild", "composition": {"Ethamsylate": "250 mg", "Progesterone": "200 mg", "Dydrogesterone": "10 mg", "Tranexamic Acid": "500 mg"}},
+        {"name": "Hydroxyprogesterone", "severity": "high", "composition": {"Hydroxyprogesterone": "250 mg", "Progesterone": "200 mg", "Dydrogesterone": "10 mg", "Tranexamic Acid": "500 mg"}}
+    ]},
+    {"symptom": "Blood Clots", "medicines": [
+        {"name": "Warfarin", "severity": "high", "composition": {"Warfarin": "5 mg", "Heparin": "5000 IU", "Aspirin": "100 mg", "Clopidogrel": "75 mg"}},
+        {"name": "Heparin", "severity": "mild", "composition": {"Heparin": "5000 IU", "Warfarin": "5 mg", "Aspirin": "100 mg", "Clopidogrel": "75 mg"}},
+        {"name": "Aspirin", "severity": "mild", "composition": {"Aspirin": "100 mg", "Warfarin": "5 mg", "Heparin": "5000 IU", "Clopidogrel": "75 mg"}},
+        {"name": "Clopidogrel", "severity": "high", "composition": {"Clopidogrel": "75 mg", "Warfarin": "5 mg", "Heparin": "5000 IU", "Aspirin": "100 mg"}},
+        {"name": "Dabigatran", "severity": "high", "composition": {"Dabigatran": "150 mg", "Warfarin": "5 mg", "Heparin": "5000 IU", "Aspirin": "100 mg"}}
+    ]},
+    {"symptom": "Blood in Semen", "medicines": [
+        {"name": "Ciprofloxacin", "severity": "high", "composition": {"Ciprofloxacin": "500 mg", "Doxycycline": "100 mg", "Metronidazole": "400 mg", "Trimethoprim": "160 mg"}},
+        {"name": "Doxycycline", "severity": "mild", "composition": {"Doxycycline": "100 mg", "Ciprofloxacin": "500 mg", "Metronidazole": "400 mg", "Trimethoprim": "160 mg"}},
+        {"name": "Metronidazole", "severity": "mild", "composition": {"Metronidazole": "400 mg", "Ciprofloxacin": "500 mg", "Doxycycline": "100 mg", "Trimethoprim": "160 mg"}},
+        {"name": "Trimethoprim", "severity": "high", "composition": {"Trimethoprim": "160 mg", "Ciprofloxacin": "500 mg", "Doxycycline": "100 mg", "Metronidazole": "400 mg"}},
+        {"name": "Azithromycin", "severity": "high", "composition": {"Azithromycin": "500 mg", "Ciprofloxacin": "500 mg", "Doxycycline": "100 mg", "Metronidazole": "400 mg"}}
+    ]},
+    {"symptom": "Brain Lesions", "medicines": [
+        {"name": "Dexamethasone", "severity": "high", "composition": {"Dexamethasone": "4 mg", "Prednisone": "20 mg", "Methylprednisolone": "16 mg", "Hydrocortisone": "50 mg"}},
+        {"name": "Prednisone", "severity": "mild", "composition": {"Prednisone": "20 mg", "Dexamethasone": "4 mg", "Methylprednisolone": "16 mg", "Hydrocortisone": "50 mg"}},
+        {"name": "Methylprednisolone", "severity": "mild", "composition": {"Methylprednisolone": "16 mg", "Dexamethasone": "4 mg", "Prednisone": "20 mg", "Hydrocortisone": "50 mg"}},
+        {"name": "Hydrocortisone", "severity": "high", "composition": {"Hydrocortisone": "50 mg", "Dexamethasone": "4 mg", "Prednisone": "20 mg", "Methylprednisolone": "16 mg"}},
+        {"name": "Bevacizumab", "severity": "high", "composition": {"Bevacizumab": "100 mg", "Dexamethasone": "4 mg", "Prednisone": "20 mg", "Methylprednisolone": "16 mg"}}
+    ]},
+    {"symptom": "Breast Calcifications", "medicines": [
+        {"name": "Vitamin D", "severity": "mild", "composition": {"Vitamin D": "1000 IU", "Calcium": "500 mg", "Magnesium": "50 mg", "Vitamin K": "100 mcg"}},
+        {"name": "Calcium", "severity": "mild", "composition": {"Calcium": "500 mg", "Vitamin D": "1000 IU", "Magnesium": "50 mg", "Vitamin K": "100 mcg"}},
+        {"name": "Magnesium", "severity": "high", "composition": {"Magnesium": "50 mg", "Vitamin D": "1000 IU", "Calcium": "500 mg", "Vitamin K": "100 mcg"}},
+        {"name": "Vitamin K", "severity": "high", "composition": {"Vitamin K": "100 mcg", "Vitamin D": "1000 IU", "Calcium": "500 mg", "Magnesium": "50 mg"}},
+        {"name": "Ibandronate", "severity": "high", "composition": {"Ibandronate": "150 mg", "Vitamin D": "1000 IU", "Calcium": "500 mg", "Magnesium": "50 mg"}}
+    ]},
+    {"symptom": "Breast Lumps", "medicines": [
+        {"name": "Tamoxifen", "severity": "high", "composition": {"Tamoxifen": "20 mg", "Letrozole": "2.5 mg", "Anastrozole": "1 mg", "Exemestane": "25 mg"}},
+        {"name": "Letrozole", "severity": "mild", "composition": {"Letrozole": "2.5 mg", "Tamoxifen": "20 mg", "Anastrozole": "1 mg", "Exemestane": "25 mg"}},
+        {"name": "Anastrozole", "severity": "mild", "composition": {"Anastrozole": "1 mg", "Tamoxifen": "20 mg", "Letrozole": "2.5 mg", "Exemestane": "25 mg"}},
+        {"name": "Exemestane", "severity": "high", "composition": {"Exemestane": "25 mg", "Tamoxifen": "20 mg", "Letrozole": "2.5 mg", "Anastrozole": "1 mg"}},
+        {"name": "Raloxifene", "severity": "high", "composition": {"Raloxifene": "60 mg", "Tamoxifen": "20 mg", "Letrozole": "2.5 mg", "Anastrozole": "1 mg"}}
+    ]},
+    {"symptom": "Breast Rash", "medicines": [
+        {"name": "Hydrocortisone", "severity": "mild", "composition": {"Hydrocortisone": "1%", "Betamethasone": "0.05%", "Clobetasol": "0.05%", "Mometasone": "0.1%"}},
+        {"name": "Betamethasone", "severity": "mild", "composition": {"Betamethasone": "0.05%", "Hydrocortisone": "1%", "Clobetasol": "0.05%", "Mometasone": "0.1%"}},
+        {"name": "Clobetasol", "severity": "high", "composition": {"Clobetasol": "0.05%", "Hydrocortisone": "1%", "Betamethasone": "0.05%", "Mometasone": "0.1%"}},
+        {"name": "Mometasone", "severity": "high", "composition": {"Mometasone": "0.1%", "Hydrocortisone": "1%", "Betamethasone": "0.05%", "Clobetasol": "0.05%"}},
+        {"name": "Triamcinolone", "severity": "mild", "composition": {"Triamcinolone": "0.1%", "Hydrocortisone": "1%", "Betamethasone": "0.05%", "Clobetasol": "0.05%"}}
+    ]},
+    {"symptom": "Burning Feet", "medicines": [
+        {"name": "Gabapentin", "severity": "high", "composition": {"Gabapentin": "300 mg", "Pregabalin": "75 mg", "Amitriptyline": "10 mg", "Duloxetine": "30 mg"}},
+        {"name": "Pregabalin", "severity": "mild", "composition": {"Pregabalin": "75 mg", "Gabapentin": "300 mg", "Amitriptyline": "10 mg", "Duloxetine": "30 mg"}},
+        {"name": "Amitriptyline", "severity": "mild", "composition": {"Amitriptyline": "10 mg", "Gabapentin": "300 mg", "Pregabalin": "75 mg", "Duloxetine": "30 mg"}},
+        {"name": "Duloxetine", "severity": "high", "composition": {"Duloxetine": "30 mg", "Gabapentin": "300 mg", "Pregabalin": "75 mg", "Amitriptyline": "10 mg"}},
+        {"name": "Capsaicin", "severity": "mild", "composition": {"Capsaicin": "0.075%", "Gabapentin": "300 mg", "Pregabalin": "75 mg", "Amitriptyline": "10 mg"}}
+    ]},
+    {"symptom": "Typhoid Fever", "medicines": [
+        {"name": "Ciprofloxacin", "severity": "high", "composition": {"Ciprofloxacin": "500 mg", "Paracetamol": "500 mg", "Chloramphenicol": "250 mg", "Azithromycin": "500 mg"}},
+        {"name": "Azithromycin", "severity": "high", "composition": {"Azithromycin": "500 mg", "Ciprofloxacin": "500 mg", "Paracetamol": "500 mg", "Chloramphenicol": "250 mg"}},
+        {"name": "Chloramphenicol", "severity": "mild", "composition": {"Chloramphenicol": "250 mg", "Ciprofloxacin": "500 mg", "Paracetamol": "500 mg", "Azithromycin": "500 mg"}},
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Ciprofloxacin": "500 mg", "Chloramphenicol": "250 mg", "Azithromycin": "500 mg"}},
+        {"name": "Dolo 650", "severity": "high", "composition": {"Paracetamol": "650 mg", "Ciprofloxacin": "500 mg", "Chloramphenicol": "250 mg", "Azithromycin": "500 mg"}}
+    ]},
+    {"symptom": "Dengue Fever", "medicines": [
+        {"name": "Acetaminophen", "severity": "mild", "composition": {"Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}},
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}},
+        {"name": "Ibuprofen", "severity": "high", "composition": {"Ibuprofen": "200 mg", "Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Naproxen": "250 mg"}},
+        {"name": "Naproxen", "severity": "high", "composition": {"Naproxen": "250 mg", "Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg"}},
+        {"name": "Dolo 650", "severity": "high", "composition": {"Paracetamol": "650 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}}
+    ]},
+    {"symptom": "Malaria", "medicines": [
+        {"name": "Chloroquine", "severity": "high", "composition": {"Chloroquine": "250 mg", "Paracetamol": "500 mg", "Artemether": "80 mg", "Lumefantrine": "480 mg"}},
+        {"name": "Artemether", "severity": "high", "composition": {"Artemether": "80 mg", "Chloroquine": "250 mg", "Paracetamol": "500 mg", "Lumefantrine": "480 mg"}},
+        {"name": "Lumefantrine", "severity": "mild", "composition": {"Lumefantrine": "480 mg", "Chloroquine": "250 mg", "Paracetamol": "500 mg", "Artemether": "80 mg"}},
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Chloroquine": "250 mg", "Artemether": "80 mg", "Lumefantrine": "480 mg"}},
+        {"name": "Dolo 650", "severity": "high", "composition": {"Paracetamol": "650 mg", "Chloroquine": "250 mg", "Artemether": "80 mg", "Lumefantrine": "480 mg"}}
+    ]},
+    {"symptom": "Viral Fever", "medicines": [
+        {"name": "Acetaminophen", "severity": "mild", "composition": {"Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg"}},
+        {"name": "Ibuprofen", "severity": "high", "composition": {"Ibuprofen": "200 mg", "Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Aspirin": "100 mg"}},
+        {"name": "Aspirin", "severity": "high", "composition": {"Aspirin": "100 mg", "Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg"}},
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg"}},
+        {"name": "Dolo 650", "severity": "high", "composition": {"Paracetamol": "650 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Aspirin": "100 mg"}}
+    ]},
+    {"symptom": "Yellow Fever", "medicines": [
+        {"name": "Acetaminophen", "severity": "mild", "composition": {"Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}},
+        {"name": "Ibuprofen", "severity": "high", "composition": {"Ibuprofen": "200 mg", "Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Naproxen": "250 mg"}},
+        {"name": "Naproxen", "severity": "high", "composition": {"Naproxen": "250 mg", "Acetaminophen": "500 mg", "Paracetamol": "500 mg", "Ibuprofen": "200 mg"}},
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}},
+        {"name": "Dolo 650", "severity": "high", "composition": {"Paracetamol": "650 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}}
+    ]},
+    {"symptom": "Common Cold", "medicines": [
+        {"name": "Paracetamol", "severity": "mild", "composition": {"Paracetamol": "500 mg", "Phenylephrine": "5 mg", "Chlorpheniramine": "2 mg", "Dextromethorphan": "10 mg"}},
+        {"name": "Ibuprofen", "severity": "mild", "composition": {"Ibuprofen": "200 mg", "Phenylephrine": "5 mg", "Chlorpheniramine": "2 mg", "Dextromethorphan": "10 mg"}},
+        {"name": "Phenylephrine", "severity": "high", "composition": {"Phenylephrine": "5 mg", "Paracetamol": "500 mg", "Chlorpheniramine": "2 mg", "Dextromethorphan": "10 mg"}},
+        {"name": "Dolo 650", "severity": "high", "composition": {"Paracetamol": "650 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}},
+        {"name": "Dextromethorphan", "severity": "mild", "composition": {"Dextromethorphan": "10 mg", "Paracetamol": "500 mg", "Phenylephrine": "5 mg", "Chlorpheniramine": "2 mg"}}
+    ]},
+    {"symptom": "Influenza (Flu)", "medicines": [
+        {"name": "Oseltamivir", "severity": "high", "composition": {"Oseltamivir": "75 mg", "Zanamivir": "10 mg", "Peramivir": "600 mg", "Baloxavir": "40 mg"}},
+        {"name": "Zanamivir", "severity": "mild", "composition": {"Zanamivir": "10 mg", "Oseltamivir": "75 mg", "Peramivir": "600 mg", "Baloxavir": "40 mg"}},
+        {"name": "Peramivir", "severity": "mild", "composition": {"Peramivir": "600 mg", "Oseltamivir": "75 mg", "Zanamivir": "10 mg", "Baloxavir": "40 mg"}},
+        {"name": "Baloxavir", "severity": "high", "composition": {"Baloxavir": "40 mg", "Oseltamivir": "75 mg", "Zanamivir": "10 mg", "Peramivir": "600 mg"}},
+        {"name": "Rimantadine", "severity": "mild", "composition": {"Rimantadine": "100 mg", "Oseltamivir": "75 mg", "Zanamivir": "10 mg", "Peramivir": "600 mg"}}
+    ]},
+    {"symptom": "COVID-19", "medicines": [
+        {"name": "Remdesivir", "severity": "high", "composition": {"Remdesivir": "200 mg", "Favipiravir": "400 mg", "Baricitinib": "4 mg", "Dexamethasone": "6 mg"}},
+        {"name": "Favipiravir", "severity": "mild", "composition": {"Favipiravir": "400 mg", "Remdesivir": "200 mg", "Baricitinib": "4 mg", "Dexamethasone": "6 mg"}},
+        {"name": "Dolo 650", "severity": "high", "composition": {"Paracetamol": "650 mg", "Acetaminophen": "500 mg", "Ibuprofen": "200 mg", "Naproxen": "250 mg"}},
+        {"name": "Dexamethasone", "severity": "high", "composition": {"Dexamethasone": "6 mg", "Remdesivir": "200 mg", "Favipiravir": "400 mg", "Baricitinib": "4 mg"}},
+        {"name": "Tocilizumab", "severity": "high", "composition": {"Tocilizumab": "400 mg", "Remdesivir": "200 mg", "Favipiravir": "400 mg", "Baricitinib": "4 mg"}}
+    ]},
+    {"symptom": "Pneumonia", "medicines": [
+        {"name": "Azithromycin", "severity": "mild", "composition": {"Azithromycin": "500 mg", "Levofloxacin": "750 mg", "Moxifloxacin": "400 mg", "Clarithromycin": "500 mg"}},
+        {"name": "Levofloxacin", "severity": "mild", "composition": {"Levofloxacin": "750 mg", "Azithromycin": "500 mg", "Moxifloxacin": "400 mg", "Clarithromycin": "500 mg"}},
+        {"name": "Moxifloxacin", "severity": "high", "composition": {"Moxifloxacin": "400 mg", "Azithromycin": "500 mg", "Levofloxacin": "750 mg", "Clarithromycin": "500 mg"}},
+        {"name": "Clarithromycin", "severity": "high", "composition": {"Clarithromycin": "500 mg", "Azithromycin": "500 mg", "Levofloxacin": "750 mg", "Moxifloxacin": "400 mg"}},
+        {"name": "Ceftriaxone", "severity": "mild", "composition": {"Ceftriaxone": "1 gm", "Azithromycin": "500 mg", "Levofloxacin": "750 mg", "Moxifloxacin": "400 mg"}}
+    ]},
+    {"symptom": "Asthma", "medicines": [
+        {"name": "Salbutamol", "severity": "mild", "composition": {"Salbutamol": "100 mcg", "Formoterol": "6 mcg", "Budesonide": "100 mcg", "Fluticasone": "50 mcg"}},
+        {"name": "Formoterol", "severity": "mild", "composition": {"Formoterol": "6 mcg", "Salbutamol": "100 mcg", "Budesonide": "100 mcg", "Fluticasone": "50 mcg"}},
+        {"name": "Budesonide", "severity": "high", "composition": {"Budesonide": "100 mcg", "Salbutamol": "100 mcg", "Formoterol": "6 mcg", "Fluticasone": "50 mcg"}},
+        {"name": "Fluticasone", "severity": "high", "composition": {"Fluticasone": "50 mcg", "Salbutamol": "100 mcg", "Formoterol": "6 mcg", "Budesonide": "100 mcg"}},
+        {"name": "Montelukast", "severity": "mild", "composition": {"Montelukast": "10 mg", "Salbutamol": "100 mcg", "Formoterol": "6 mcg", "Budesonide": "100 mcg"}}
+    ]},
+    {"symptom": "High Blood Pressure", "medicines": [
+        {"name": "Lisinopril", "severity": "high", "composition": {"Lisinopril": "10 mg", "Hydrochlorothiazide": "12.5 mg", "Amlodipine": "5 mg", "Losartan": "50 mg"}},
+        {"name": "Amlodipine", "severity": "high", "composition": {"Amlodipine": "5 mg", "Lisinopril": "10 mg", "Hydrochlorothiazide": "12.5 mg", "Losartan": "50 mg"}},
+        {"name": "Losartan", "severity": "mild", "composition": {"Losartan": "50 mg", "Lisinopril": "10 mg", "Hydrochlorothiazide": "12.5 mg", "Amlodipine": "5 mg"}},
+        {"name": "Metoprolol", "severity": "mild", "composition": {"Metoprolol": "50 mg", "Lisinopril": "10 mg", "Hydrochlorothiazide": "12.5 mg", "Amlodipine": "5 mg"}},
+        {"name": "Hydrochlorothiazide", "severity": "mild", "composition": {"Hydrochlorothiazide": "12.5 mg", "Lisinopril": "10 mg", "Amlodipine": "5 mg", "Losartan": "50 mg"}}
+    ]},
+    {"symptom": "High Blood Sugar", "medicines": [
+        {"name": "Metformin", "severity": "high", "composition": {"Metformin": "500 mg", "Glibenclamide": "5 mg", "Pioglitazone": "15 mg", "Sitagliptin": "100 mg"}},
+        {"name": "Glibenclamide", "severity": "high", "composition": {"Glibenclamide": "5 mg", "Metformin": "500 mg", "Pioglitazone": "15 mg", "Sitagliptin": "100 mg"}},
+        {"name": "Pioglitazone", "severity": "mild", "composition": {"Pioglitazone": "15 mg", "Metformin": "500 mg", "Glibenclamide": "5 mg", "Sitagliptin": "100 mg"}},
+        {"name": "Sitagliptin", "severity": "mild", "composition": {"Sitagliptin": "100 mg", "Metformin": "500 mg", "Glibenclamide": "5 mg", "Pioglitazone": "15 mg"}},
+        {"name": "Insulin", "severity": "high", "composition": {"Insulin": "10 units", "Metformin": "500 mg", "Glibenclamide": "5 mg", "Pioglitazone": "15 mg"}}
+    ]},
+    {"symptom": "Low Blood Pressure", "medicines": [
+        {"name": "Fludrocortisone", "severity": "high", "composition": {"Fludrocortisone": "0.1 mg", "Midodrine": "5 mg", "Droxidopa": "100 mg", "Ephedrine": "25 mg"}},
+        {"name": "Midodrine", "severity": "high", "composition": {"Midodrine": "5 mg", "Fludrocortisone": "0.1 mg", "Droxidopa": "100 mg", "Ephedrine": "25 mg"}},
+        {"name": "Droxidopa", "severity": "mild", "composition": {"Droxidopa": "100 mg", "Fludrocortisone": "0.1 mg", "Midodrine": "5 mg", "Ephedrine": "25 mg"}},
+        {"name": "Ephedrine", "severity": "mild", "composition": {"Ephedrine": "25 mg", "Fludrocortisone": "0.1 mg", "Midodrine": "5 mg", "Droxidopa": "100 mg"}},
+        {"name": "Pyridostigmine", "severity": "mild", "composition": {"Pyridostigmine": "60 mg", "Fludrocortisone": "0.1 mg", "Midodrine": "5 mg", "Droxidopa": "100 mg"}}
+    ]},
+    {"symptom": "Low Blood Sugar", "medicines": [
+        {"name": "Glucose Tablets", "severity": "high", "composition": {"Glucose": "4 g", "Dextrose": "5 g", "Sucrose": "4 g", "Fructose": "4 g"}},
+        {"name": "Dextrose Injection", "severity": "high", "composition": {"Dextrose": "25 g", "Glucose": "5 g", "Sucrose": "4 g", "Fructose": "4 g"}},
+        {"name": "Glucagon", "severity": "mild", "composition": {"Glucagon": "1 mg", "Dextrose": "5 g", "Sucrose": "4 g", "Fructose": "4 g"}},
+        {"name": "Sucrose Tablets", "severity": "mild", "composition": {"Sucrose": "4 g", "Glucose": "4 g", "Dextrose": "5 g", "Fructose": "4 g"}},
+        {"name": "Fructose Solution", "severity": "mild", "composition": {"Fructose": "4 g", "Glucose": "4 g", "Dextrose": "5 g", "Sucrose": "4 g"}}
+    ]}
+]
